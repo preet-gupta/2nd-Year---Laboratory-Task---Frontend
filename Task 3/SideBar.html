@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Layouts</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        header {
+            background: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .layout {
+            display: flex;
+            min-height: 300px;
+        }
+
+        .sidebar {
+            width: 220px;
+            background: #333;
+            color: white;
+            padding: 25px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+        }
+
+        .sidebar a:hover {
+            color: #00bcd4;
+        }
+
+        .main {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .product-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-card h2 {
+            margin: 15px 0 10px;
+        }
+
+        .product-card p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            background: #222;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .blog-section {
+            text-align: center;
+        }
+
+        .blog-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .blog-card {
+            flex: 1;
+            background: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .blog-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .blog-card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .layout {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                text-align: center;
+            }
+
+            .sidebar a {
+                display: inline-block;
+                margin: 0 10px;
+            }
+
+            .main {
+                padding: 20px;
+            }
+
+            .blog-container {
+                flex-direction: column;
+            }
+
+            .blog-card {
+                width: 100%;
+            }
+
+            .product-card {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Responsive Web Layout</h1>
+    </header>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+            <h2>Sidebar</h2>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+        </aside>
+
+        <main class="main">
+
+            <section class="product-section">
+                <h2>Product Card</h2>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Shoes">
+                    <h2>Running Shoes</h2>
+                    <p>Comfortable and stylish shoes for everyday use.</p>
+                    <div class="price">₹1,999</div>
+                    <button class="btn">Buy Now</button>
+                </div>
+            </section>
+
+            <section class="blog-section">
+                <h2>Latest Blogs</h2>
+
+                <div class="blog-container">
+
+                    <article class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500" alt="Coding">
+                        <h3>Learn Web Development</h3>
+                        <p>Start your web development journey with HTML, CSS and JavaScript.</p>
+                    </article>
+
+                    <article class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=500" alt="Programming">
+                        <h3>Programming Tips</h3>
+                        <p>Improve your programming skills by practicing problems regularly.</p>
+                    </article>
+
+                    <article class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500" alt="Developer">
+                        <h3>Become a Developer</h3>
+                        <p>Build projects and create a strong portfolio to become a better developer.</p>
+                    </article>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>© 2026 Responsive Web Layout</p>
+    </footer>
+
+</body>
+</html>
