@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Chessboard</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        #chessboard {
+            display: grid;
+            grid-template-columns: repeat(8, 60px);
+            width: 480px;
+            margin: auto;
+            border: 3px solid black;
+        }
+
+        .box {
+            width: 60px;
+            height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Dynamic Chessboard</h1>
+
+    <div id="chessboard"></div>
+
+    <script>
+
+        let board = document.getElementById("chessboard");
+
+        for (let i = 0; i < 8; i++) {
+
+            for (let j = 0; j < 8; j++) {
+
+                let box = document.createElement("div");
+
+                box.className = "box";
+
+                if ((i + j) % 2 === 0) {
+                    box.style.backgroundColor = "white";
+                }
+                else {
+                    box.style.backgroundColor = "black";
+                }
+
+                board.appendChild(box);
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
